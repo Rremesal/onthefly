@@ -1,0 +1,64 @@
+* {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+body {
+    margin: 0px;
+    
+}
+
+#banner {
+    position: relative;
+}
+
+h1 {
+    position: absolute;
+    top: 60px;
+    margin-left: 45%;
+    color: blue;
+    font-size: 34px;
+    
+}
+
+
+img {
+    height: 40vh;
+    width: 100%;
+}
+
+#toevoegDiv {
+    position: relative;
+    background-color: lightblue;
+    width: 370px;
+    height: 165px;
+    border-radius: 10px;
+    margin-left: 3px;
+}
+
+#inputType {
+    margin-left: 118px;
+    margin-bottom: 3px;
+}
+
+#inputVliegtuigMa {
+    margin-bottom: 3px;
+}
+
+#statusDropDown {
+    margin-left: 110px;
+}
+
+#btnSubmit {
+    position: relative;
+    margin-left: 126px;
+}
+
+
+/* De CSS voor overzicht pagina */
+th {
+    background-color: aqua;
+    border: solid 2px black;
+}
+
+td {
+    text-align: center;
+}
