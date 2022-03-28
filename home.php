@@ -39,12 +39,12 @@
             <label>Vliegtuigmaatschappij <input type="text" name="txtVliegtuigMa" id="inputVliegtuigMa" value="<?php if(isset($data)) echo $data->vliegmaatschappij; ?>"/></label><br/>
             <label>Status </label>
             <select id="statusDropDown" name="selStatus" value="<?php if(isset($data)) echo $data->status; ?>">
-                <option <?php if(isset($data)) if($data->status == "") echo "selected"; ?> value="-"></option>
-                <option value="NOT IN OPERATION">NOT IN OPERATION</option>
-                <option value="DEPARTED">DEPARTED</option>
-                <option value="ARRIVED">ARRIVED</option>
-                <option value="DELAYED">DELAYED</option>
-                <option value="CANCELLED">CANCELLED</option>
+                <option <?php if(isset($data)) if($data->status == "") echo "selected ";?> value="-"></option>
+                <option <?php if(isset($data)) if($data->status == "NOT IN OPERATION") echo "selected ";?>value="NOT IN OPERATION">NOT IN OPERATION</option>
+                <option <?php if(isset($data)) if($data->status == "DEPARTED") echo "selected ";?>value="DEPARTED">DEPARTED</option>
+                <option <?php if(isset($data)) if($data->status == "ARRIVED") echo "selected ";?>value="ARRIVED">ARRIVED</option>
+                <option <?php if(isset($data)) if($data->status == "DELAYED") echo "selected ";?>value="DELAYED">DELAYED</option>
+                <option <?php if(isset($data)) if($data->status == "CANCELLED") echo "selected ";?>value="CANCELLED">CANCELLED</option>
             </select>
             <br/>
             <br/>
