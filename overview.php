@@ -3,11 +3,10 @@
 <html>
 <head>
     <title>Document</title>
-    <link rel="stylesheet" href="css.css"/>
+    <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-    <a href="overview.php">overzicht vliegtuigen</a>
-    <a href="home.php">home</a>
+    <?php require("menu.php");?>
     
     <table>
         <th>Type</th>
@@ -24,7 +23,7 @@
                     "<td>".$rows['type']."</td>".
                     "<td>".$rows['vliegmaatschappij']."</td>".
                     "<td>".$rows['status']."</td>".
-                    "<td>"."<a href='home.php?id=".$rows['vliegtuignummer']."'>wijzig</a>"."</td>";
+                    "<td>"."<a href='home.php?id=".$rows['vliegtuignummer']."'>wijzig</a> <a href='planepage.php?id=".$rows['vliegtuignummer']."'>details</a></td>";
                     "</tr>";
                 }
             } else echo "ophalen van vliegtuigdata mislukt";

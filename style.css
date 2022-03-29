@@ -1,0 +1,101 @@
+/* De CSS voor het menu */
+ul {
+    list-style-type: none;
+    background-color: darkcyan;    
+    width: 190px;
+    height:960px;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+}
+
+li  {
+    background-color:#0086b3;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: outset 1px;
+}
+
+li a {
+    margin-left: 0px;
+    text-decoration: none;
+    color: whitesmoke;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    
+}
+
+li:hover {
+    background-color:#6699ff;
+}
+
+
+
+/* De CSS voor home.php */
+
+* {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+body {
+    margin: 0px;
+    
+}
+
+#banner {
+    position: relative;
+    margin-left: 190px;
+}
+
+h1 {
+    position: absolute;
+    top: 60px;
+    margin-left: 40%;
+    color:#00cc66;
+    font-size: 50px;
+    
+}
+
+img {
+    height: 40vh;
+    width: 100%;
+}
+
+#toevoegDiv {
+    position: relative;
+    background-color: lightblue;
+    width: 370px;
+    height: 165px;
+    border-radius: 10px;
+    margin-left: 240px;
+}
+
+#inputType {
+    margin-left: 118px;
+    margin-bottom: 3px;
+}
+
+#inputVliegtuigMa {
+    margin-bottom: 3px;
+}
+
+#statusDropDown {
+    margin-left: 110px;
+}
+
+#btnSubmit {
+    position: relative;
+    margin-left: 126px;
+}
+
+
+/* De CSS voor overzicht pagina */
+table {
+    margin-left: 200px;
+    background-color: lightblue;
+}
+
+
+
+td {
+    text-align: center;
+}

@@ -18,11 +18,10 @@
 <html>
 <head>
     <title>Home</title>
-    <link rel="stylesheet" href="css.css"/>
+    <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-    <a href="overview.php">overzicht vliegtuigen</a>
-    <a href="home.php">home</a>
+    <?php require("menu.php");?>
 
     <div id="banner">
         <img src="background.png"/>
