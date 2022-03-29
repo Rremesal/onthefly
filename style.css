@@ -92,10 +92,16 @@ img {
 table {
     margin-left: 200px;
     background-color: lightblue;
+    float: left;
+    margin-top: 10px;
 }
-
-
 
 td {
     text-align: center;
+}
+
+/* De CSS voor planepage.php */
+#detailDiv {
+    margin-left: 200px;
+    float: left
 }
