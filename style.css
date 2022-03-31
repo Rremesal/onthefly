@@ -16,9 +16,12 @@ li  {
     border: outset 1px;
 }
 
-li a {
-    margin-left: 0px;
+a {
     text-decoration: none;
+}
+
+a li {
+    margin-left: 0px;
     color: whitesmoke;
     padding-top: 15px;
     padding-bottom: 15px;
