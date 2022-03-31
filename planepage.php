@@ -14,10 +14,12 @@
             $stm = $conn->prepare($query);
             if($stm->execute()) {
                 $data = $stm->fetch(PDO::FETCH_OBJ);
-            ?>  <h2><?php echo $data->type; ?></h2>
+            ?> <?php echo "Type: "; echo $data->type; ?><br/>
             <?php
             } 
             ?>
+            <?php echo "vliegtuigmaatschappij: "; echo $data->vliegmaatschappij;  ?><br/>
+            <?php echo "status: "; echo $data->status; ?>
     </div>
       
     

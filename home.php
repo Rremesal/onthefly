@@ -39,11 +39,8 @@
             <label>Status </label>
             <select id="statusDropDown" name="selStatus" value="<?php if(isset($data)) echo $data->status; ?>">
                 <option <?php if(isset($data)) if($data->status == "") echo "selected ";?> value="-"></option>
-                <option <?php if(isset($data)) if($data->status == "NOT IN OPERATION") echo "selected ";?>value="NOT IN OPERATION">NOT IN OPERATION</option>
-                <option <?php if(isset($data)) if($data->status == "DEPARTED") echo "selected ";?>value="DEPARTED">DEPARTED</option>
-                <option <?php if(isset($data)) if($data->status == "ARRIVED") echo "selected ";?>value="ARRIVED">ARRIVED</option>
-                <option <?php if(isset($data)) if($data->status == "DELAYED") echo "selected ";?>value="DELAYED">DELAYED</option>
-                <option <?php if(isset($data)) if($data->status == "CANCELLED") echo "selected ";?>value="CANCELLED">CANCELLED</option>
+                <option <?php if(isset($data)) if($data->status == "NOT IN OPERATION") echo "selected ";?>value="NOT IN OPERATION">IN PRODUCTION</option>
+                <option <?php if(isset($data)) if($data->status == "READY FOR USE") echo "selected ";?>value="READY FOR USE">READY FOR USE</option>
             </select>
             <br/>
             <br/>
