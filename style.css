@@ -3,7 +3,7 @@ ul {
     list-style-type: none;
     background-color: darkcyan;    
     width: 190px;
-    height:960px;
+    height:601px;
     position: absolute;
     margin: 0;
     padding: 0;
@@ -63,11 +63,16 @@ img {
     width: 100%;
 }
 
+.flexcontainer {
+    display: flex;
+    height: 350px;
+}
+
 #toevoegDiv {
     position: relative;
     background-color: lightblue;
-    width: 370px;
-    height: 165px;
+    width: 378px;
+    height: 201px;
     border-radius: 10px;
     margin-left: 240px;
 }
@@ -88,8 +93,35 @@ img {
 #btnSubmit {
     position: relative;
     margin-left: 126px;
+    margin-top: 20px;
 }
 
+#toevoegDivPlanning {
+    position: relative;
+    background-color: #8cd9b3;
+    width: 370px;
+    height: 201px;
+    border-radius: 10px;
+    margin-left: 240px;
+
+}
+
+#inputDestination {
+    margin-left: 9px;
+}
+
+#inputRetourDate {
+    margin-left: 4px;
+}
+
+#statusDropDownPlanning {
+    margin-left: 53px;
+}
+
+#btnSubmitPlanning {
+    position: relative;
+    margin-left: 126px;
+}
 
 /* De CSS voor overzicht pagina */
 table {
