@@ -123,16 +123,31 @@ img {
     margin-left: 126px;
 }
 
-/* De CSS voor overzicht pagina */
+/* De CSS voor de <table> */
 table {
     margin-left: 200px;
     background-color: lightblue;
     float: left;
     margin-top: 10px;
+    border: solid 1px black;
 }
 
 td {
     text-align: center;
+    border: solid 1px black;
+}
+
+th {
+    background-color: darkcyan;
+}
+
+tr:nth-child(even) {
+    background-color:#6699ff;
+}
+
+tr {
+    background-color: yellowgreen;
+    border: solid 1px black;
 }
 
 /* De CSS voor planepage.php */
