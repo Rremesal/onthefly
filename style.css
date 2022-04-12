@@ -1,8 +1,5 @@
 /* De CSS voor het menu */
 
-#menuDiv {
-    position: absolute;
-}
 ul {
     list-style-type: none;
     background-color: darkcyan;    
@@ -88,12 +85,14 @@ img {
 }
 
 #inputType {
-    margin-left: 118px;
+    margin-left: 119px;
     margin-bottom: 3px;
+    width: 100px;
 }
 
 #inputVliegtuigMa {
     margin-bottom: 3px;
+    width: 80px;
 }
 
 #statusDropDown {
@@ -102,8 +101,8 @@ img {
 
 #btnSubmit {
     position: relative;
-    margin-left: 126px;
-    margin-top: 20px;
+    left: 83px;
+    top: 34px;
 }
 
 #toevoegDivPlanning {
@@ -130,7 +129,7 @@ img {
 
 #btnSubmitPlanning {
     position: relative;
-    margin-left: 126px;
+    left: 83px;
 }
 
 /* De CSS voor de <table> */
