@@ -1,4 +1,8 @@
 /* De CSS voor het menu */
+
+#menuDiv {
+    position: absolute;
+}
 ul {
     list-style-type: none;
     background-color: darkcyan;    
@@ -41,6 +45,12 @@ li:hover {
 }
 body {
     margin: 0px;
+    
+}
+
+form {
+    margin-left: 17%;
+    position: relative;
     
 }
 
@@ -148,6 +158,15 @@ tr:nth-child(even) {
 tr {
     background-color: yellowgreen;
     border: solid 1px black;
+}
+
+#bodyDiv {
+   margin-top: 30px; 
+   position: absolute;
+}
+
+.tools {
+    margin-left: 200px;
 }
 
 /* De CSS voor planepage.php */
