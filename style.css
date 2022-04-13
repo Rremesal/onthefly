@@ -4,7 +4,8 @@ ul {
     list-style-type: none;
     background-color: darkcyan;    
     width: 190px;
-    height:601px;
+    /* height:601px; */
+    height: 100%;
     position: absolute;
     margin: 0;
     padding: 0;
@@ -46,10 +47,9 @@ body {
     
 }
 
-form {
-    margin-left: 17%;
+.form {
+    margin-left: 14%;
     position: relative;
-    
 }
 
 #banner {
@@ -63,7 +63,10 @@ h1 {
     margin-left: 40%;
     color:#00cc66;
     font-size: 50px;
-    
+}
+
+h2 {
+    margin-left: 17%;
 }
 
 img {
@@ -93,6 +96,7 @@ img {
 
 #inputVliegtuigMa {
     margin-bottom: 3px;
+    margin-left: 1px;
     width: 80px;
 }
 
@@ -113,19 +117,32 @@ img {
     height: 230px;
     border-radius: 10px;
     margin-left: 235px;
-
 }
 
-#inputDestination {
-    margin-left: 9px;
+#tovoegDivPlanning label {
+    margin-left: 10px;
 }
 
-#inputRetourDate {
+#dropdownVliegtuigNummer {
     margin-left: 4px;
 }
 
+#inputDestination {
+    margin-left: 39px;
+    width: 155px;
+}
+
+#inputDepartureDate {
+    margin-left: 30px;
+}
+
+#inputRetourDate {
+    margin-left: 35px;
+}
+
 #statusDropDownPlanning {
-    margin-left: 53px;
+    margin-left: 83px;
+
 }
 
 #btnSubmitPlanning {
