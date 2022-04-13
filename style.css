@@ -193,3 +193,33 @@ tr {
     margin-left: 200px;
     float: left
 }
+
+/* De CSS voor deleted.php */
+#deletedPage {
+    background-color:#8cd9b3
+}
+
+h3 {
+    margin-left: 14px;
+    margin-top: 15px;
+    font-size: 31px;
+    position: relative;
+    
+}
+
+#messageDiv {
+    position: absolute;
+    background-color: #00cc66;
+    width: 500px;
+    margin-left: 30%;
+    margin-top: 11%;
+    border-radius: 12%;
+    height: 300px;
+    border-style: solid;
+
+
+}
+
+p {
+    margin-left: 14px;
+}
