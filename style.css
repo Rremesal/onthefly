@@ -4,11 +4,11 @@ ul {
     list-style-type: none;
     background-color: darkcyan;    
     width: 190px;
-    /* height:601px; */
-    height: 100%;
+    height: 100vh;
     position: absolute;
     margin: 0;
     padding: 0;
+    z-index: 5;
 }
 
 li  {
@@ -125,19 +125,23 @@ img {
 
 #dropdownVliegtuigNummer {
     margin-left: 4px;
+    margin-bottom: 3px;
 }
 
 #inputDestination {
     margin-left: 39px;
+    margin-bottom: 3px;
     width: 155px;
 }
 
 #inputDepartureDate {
     margin-left: 30px;
+    margin-bottom: 3px;
 }
 
 #inputRetourDate {
     margin-left: 35px;
+    margin-bottom: 3px;
 }
 
 #statusDropDownPlanning {
@@ -177,10 +181,11 @@ tr {
     border: solid 1px black;
 }
 
-#bodyDiv {
+.bodyDiv {
    margin-top: 30px; 
    margin-left:8%;
    position: absolute;
+   z-index: 4;
    
 }
 
@@ -192,6 +197,16 @@ tr {
 #detailDiv {
     margin-left: 200px;
     float: left
+}
+
+/* de CSS voor overview.php */
+.imageDiv {
+    background-image: url("background2.png");
+    background-repeat: no-repeat;
+    z-index: 3;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
 }
 
 /* De CSS voor deleted.php */
