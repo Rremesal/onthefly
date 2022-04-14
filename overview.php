@@ -38,7 +38,7 @@
                                 "<td>".$rows->status."</td>".
                                 "<td>"."<a href='home.php?id=".$rows->vliegtuignummer."'>wijzig</a></td>".
                                 "<td>"."<a href='planning.php?id=".$rows->vliegtuignummer."'>planning</a>".
-                                "<td>"."<a href='planning.php?id=".$rows->vliegtuignummer."'>verwijderen</a>".
+                                "<td>"."<a href='deleted.php?vliegtuigId=".$rows->vliegtuignummer."'>verwijderen</a>".
                                 "</tr>";
                             }
                         } else echo "ophalen van vliegtuigdata mislukt";
@@ -54,7 +54,7 @@
                                     "<td>".$rows->status."</td>".
                                     "<td>"."<a href='home.php?id=".$rows->vliegtuignummer."'>wijzig</a></td>".
                                     "<td>"."<a href='planning.php?id=".$rows->vliegtuignummer."'>planning</a>".
-                                    "<td>"."<a href='planning.php?id=".$rows->vliegtuignummer."'>verwijderen</a>".
+                                    "<td>"."<a href='deleted.php?vliegtuigId=".$rows->vliegtuignummer."'>verwijderen</a>".
                                     "</tr>";
                                 }
                             } else echo "ophalen van vliegtuigdata mislukt";
@@ -70,7 +70,7 @@
                                     "<td>".$rows->status."</td>".
                                     "<td>"."<a href='home.php?id=".$rows->vliegtuignummer."'>wijzig</a></td>".
                                     "<td>"."<a href='planning.php?id=".$rows->vliegtuignummer."'>planning</a>".
-                                    "<td>"."<a href='planning.php?id=".$rows->vliegtuignummer."'>verwijderen</a>".
+                                    "<td>"."<a href='deleted.php?vliegtuigId=".$rows->vliegtuignummer."'>verwijderen</a>".
 
                                     "</tr>";
                                 }

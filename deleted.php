@@ -7,6 +7,13 @@
         if($stm->execute()) {
             header("Location: deleted.php");
         }
+    } else if(isset($_GET['vliegtuigId'])) {
+        $vliegtuigId = $_GET['vliegtuigId'];
+        $query = "DELETE FROM vliegtuigen WHERE vliegtuignummer=$vliegtuigId";
+        $stm = $conn->prepare($query);
+        if($stm->execute()) {
+            header("Location: deleted.php");
+        }
     }
 ?>
 
