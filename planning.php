@@ -78,7 +78,7 @@
                                 "<td>".$rows->retourdatum."</td>". 
                                 "<td>".$rows->bestemming."</td>". 
                                 "<td>".$rows->status."</td>".
-                                "<td>"."<a href='home.php?id=$planeId'>Wijzigen</a>"."</td>"; 
+                                "<td>"."<a href='home.php?id=$planeId&pid=$rows->vluchtnummer'>Wijzigen</a>"."</td>";
                                 "</tr>";
                             }
                        

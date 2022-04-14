@@ -17,6 +17,16 @@ aangemaakt die leeg is -->
         if($stm->execute()) {
             $dataPlanning = $stm->fetch(PDO::FETCH_OBJ);
         } else echo "ophalen van data planning mislukt"; 
+    
+    } else if (isset($_GET['id']) && isset($_GET['pid'])) {
+            $pid = $_GET['pid'];
+            $planeId = $_GET['id'];
+            $queryPlanning = "SELECT * FROM planning WHERE vliegtuignummer=$planeId AND vluchtnummer=$pid";
+            $stm = $conn->prepare($queryPlanning);
+            if($stm->execute()) {
+                $dataPlanning = $stm->fetch(PDO::FETCH_OBJ);
+            } else echo "ophalen van data planning mislukt"; 
+    
     } else $dataPlanning = "";
 
 ?> 
@@ -78,6 +88,7 @@ aangemaakt die leeg is -->
             $query = "INSERT INTO vliegtuigen (type,vliegmaatschappij,status) VALUES ('$type','$vliegtuigmaatschappij','$status')";
             $stm = $conn->prepare($query);
             if($stm->execute()) {
+                echo "<br/>"."<br/>";
                 echo "vliegtuig opgeslagen";
                 echo "</div>";
             } else {
@@ -137,7 +148,7 @@ aangemaakt die leeg is -->
         $aankomstdatum = $_POST['dateRetourDate'];
         $statusPlanning = $_POST['selStatus'];
 
-        $query = "UPDATE planning SET bestemming='$bestemming',vertrekdatum='$vertrekdatum',status='$statusPlanning' WHERE vliegtuignummer=$planeId";
+        $query = "UPDATE planning SET bestemming='$bestemming',vertrekdatum='$vertrekdatum',status='$statusPlanning' WHERE vliegtuignummer=$dataPlanning->vliegtuignummer AND vluchtnummer=$dataPlanning->vluchtnummer";
         $stm = $conn->prepare($query);
         if($stm->execute()) {
             echo "info geupdatet";
