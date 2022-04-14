@@ -14,6 +14,8 @@
     <?php require("menu.php"); ?>
     <div class="bodyDiv">
     <?php 
+    // alleen als er geen id wordt meegegeven aan de url wordt deze 'form' getoond (dus als de pagina direct wordt)
+    //benaderd
         if(!isset($_GET['id'])) {
     ?>
         <form class="tools" method="POST">
@@ -25,6 +27,7 @@
     <?php } ?>
 
     <?php 
+        //als er op de knop in het 'form' gedrukt wordt worden alleen de planningen op de ingevoerde dag getoond
         if(isset($_POST['btnSubmit'])) {
             $dateInputted = $_POST['dateInput'];
             $query = "SELECT * FROM planning WHERE vertrekdatum='$dateInputted'";
@@ -52,6 +55,8 @@
             <th>Status</th>
             
             <?php
+            //als er een 'id' is meegegeven aan de url worden alleen de planningen van het vliegtuig met dat 'id'
+            //getoond
                 if(isset($_GET['id'])) {
                     $planeId = $_GET['id'];
                     $queryVliegtuig = "SELECT * FROM vliegtuigen WHERE vliegtuignummer=$planeId";
@@ -79,6 +84,7 @@
                        
                     } else echo "kon data niet ophalen";
                 } else {
+                    //als er geen id is meegegeven aan de url worden alle planningen getoond
                     $query = "SELECT * FROM planning";
                     $stm = $conn->prepare($query);
                     if($stm->execute()) {
@@ -101,6 +107,7 @@
             
 
         ?>
+    <!-- een div voor de achtergrond-afbeelding -->
     </div>
     <div class="imageDiv">
     </div>

@@ -1,5 +1,7 @@
 <?php include("connection.php"); ?>
-
+<!-- kijkt of er een 'id' is meegegeven aan de url als dit zo is worden twee queries uitgevoerd 
+om de data uit beide tabellen kunt halen. Als er geen 'id' is meegegeven wordt er een variabele 'datePlanning'
+aangemaakt die leeg is -->
 <?php
     if(isset($_GET['id'])) {
         $planeId = $_GET['id'];
@@ -39,7 +41,7 @@
     
         <div id="toevoegDiv">
             <h2>Vliegtuigen</h2>
-        
+        <!-- als de 'data' variabele bestaat en waardes bevat wordt deze data automatisch ingevoerd in de input-velden, anders blijven deze leeg -->
             <form method="POST" class="form">
                 <label>Type <input type="text" name="txtType" id="inputType" value="<?php if(isset($data)) echo $data->type; ?>"/></label><br/>
                 <label>Vliegtuigmaatschappij <input type="text" name="txtVliegtuigMa" id="inputVliegtuigMa" value="<?php if(isset($data)) echo $data->vliegmaatschappij; ?>"/></label><br/>
@@ -54,10 +56,8 @@
                 <br/>
                 <input type="submit" value=<?php if(isset($_GET['id'])) echo "Wijzigen"; else echo "Toevoegen";?>  name="btnSubmit" id="btnSubmit"/>
             </form>
-
-        
-
         <?php 
+        // als er een 'id' in de url-balk staat en op de knop gedrukt wordt, wordt er een update query uitgevoerd
         if(isset($_GET['id']) && isset($_POST['btnSubmit'])) {
             $type = $_POST['txtType'];
             $vliegtuigmaatschappij = $_POST['txtVliegtuigMa'];
@@ -69,7 +69,7 @@
                 echo "info geupdatet";
                 echo "</div>";
             }  
-            
+        //als er geen 'id' in de url-balk staat wordt er een insert query uitgevoerd
         } else if((!isset($_GET['id']) && (isset($_POST['btnSubmit'])))) {
             $type = $_POST['txtType'];
             $vliegtuigmaatschappij = $_POST['txtVliegtuigMa'];
@@ -79,11 +79,9 @@
             $stm = $conn->prepare($query);
             if($stm->execute()) {
                 echo "vliegtuig opgeslagen";
-                // echo "</form>";
                 echo "</div>";
             } else {
                 echo "fout met het uploaden van de data";
-                // echo "</form>";
                 echo "</div>";
             } 
         } else {
@@ -91,10 +89,10 @@
         }
     ?>
             
-
+        
         <div id="toevoegDivPlanning">
             <h2>Planning</h2>
-        
+        <!-- als de 'data' variabele bestaat en waardes bevat wordt deze data automatisch ingevoerd in de input-velden, anders blijven deze leeg -->
             <form method="POST" class="form">
                 <label>Vliegtuignummer 
                     <select name="ddVliegtuigNummer" id="dropdownVliegtuigNummer"> 
@@ -102,9 +100,9 @@
                             $query = "SELECT vliegtuignummer,type FROM vliegtuigen";
                             $stm = $conn->prepare($query);
                             if($stm->execute()) {
-                                //$data = $stm->fetchAll(PDO::FETCH_OBJ);
-                                while($rows=$stm->fetch(PDO::FETCH_ASSOC)) {
-                                    echo "<option value='".$rows['vliegtuignummer']."'>".$rows['vliegtuignummer']." - ".$rows['type']."</option>";
+                                $data = $stm->fetchAll(PDO::FETCH_OBJ);
+                                foreach($data as $plane) {
+                                    echo "<option value='".$plane->vliegtuignummer."'>".$plane->vliegtuignummer." - ".$plane->type."</option>";
                                 }
                             }
                         ?>
@@ -132,6 +130,7 @@
     
 
 <?php 
+// als er een 'id' in de url-balk staat en op de knop gedrukt wordt, wordt er een update query uitgevoerd
     if(isset($_GET['id']) && isset($_POST['btnSubmitPlanning'])) {
         $bestemming = $_POST['txtDestination'];
         $vertrekdatum = $_POST['dateDepartureDate'];
@@ -144,7 +143,7 @@
             echo "info geupdatet";
             echo "</div>";
         }  
-        
+//als er geen 'id' in de url-balk staat wordt er een insert query uitgevoerd
     } else if((!isset($_GET['id']) && (isset($_POST['btnSubmitPlanning'])))) {
         $bestemming = $_POST['txtDestination'];
         $vliegtuigNummer = $_POST['ddVliegtuigNummer'];
