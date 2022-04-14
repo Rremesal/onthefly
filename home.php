@@ -17,7 +17,8 @@ aangemaakt die leeg is -->
         if($stm->execute()) {
             $dataPlanning = $stm->fetch(PDO::FETCH_OBJ);
         } else echo "ophalen van data planning mislukt"; 
-    
+    //als zowel een 'id' als een 'pid' (id van planning tabel) zijn meegegeven aan de url, dan wordt een query 
+    //uitgevoerd die records oplevert die zowel dit 'id' als 'pid' hebben
     } else if (isset($_GET['id']) && isset($_GET['pid'])) {
             $pid = $_GET['pid'];
             $planeId = $_GET['id'];
