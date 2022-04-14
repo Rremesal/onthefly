@@ -33,8 +33,8 @@ je teruggestuurd naar de homepagina -->
 <body id="deletedPage">
     <div id="messageDiv">
         <h3>Record verwijderd</h3>
-        <p>U wordt in 5 seconden teruggestuurd naar de homepagina</p>
-        <?php header("Refresh: 5; URL=home.php"); ?>
+        <p>U wordt in 1 seconden teruggestuurd naar de homepagina.</p>
+        <?php header("Refresh: 1; URL=home.php"); ?>
     </div>
 
     
