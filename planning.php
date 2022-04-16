@@ -27,24 +27,7 @@
     <?php } ?>
 
     <?php 
-        //als er op de knop in het 'form' gedrukt wordt worden alleen de planningen op de ingevoerde dag getoond
-        if(isset($_POST['btnSubmit'])) {
-            $dateInputted = $_POST['dateInput'];
-            $query = "SELECT * FROM planning WHERE vertrekdatum='$dateInputted'";
-            $stm = $conn->prepare($query);
-            if($stm->execute()) {
-                $data = $stm->fetchAll(PDO::FETCH_OBJ);
-                foreach($data as $plane) {
-                    echo "<tr>". 
-                    "<td>".$plane->vliegtuignummer."</td>". 
-                    "<td>".$plane->vertrekdatum."</td>". 
-                    "<td>".$plane->retourdatum."</td>". 
-                    "<td>".$plane->bestemming."</td>". 
-                    "<td>".$plane->status."</td>".
-                    "</tr>";
-                }
-            }
-        }
+        
 
     ?>
         <table>
@@ -57,7 +40,24 @@
             <?php
             //als er een 'id' is meegegeven aan de url worden alleen de planningen van het vliegtuig met dat 'id'
             //getoond
-                if(isset($_GET['id'])) {
+            //als er op de knop in het 'form' gedrukt wordt worden alleen de planningen op de ingevoerde dag getoond
+                if(isset($_POST['btnSubmit'])) {
+                    $dateInputted = $_POST['dateInput'];
+                    $query = "SELECT * FROM planning WHERE vertrekdatum='$dateInputted'";
+                    $stm = $conn->prepare($query);
+                    if($stm->execute()) {
+                        $data = $stm->fetchAll(PDO::FETCH_OBJ);
+                        foreach($data as $plane) {
+                            echo "<tr>". 
+                            "<td>".$plane->vliegtuignummer."</td>". 
+                            "<td>".$plane->vertrekdatum."</td>". 
+                            "<td>".$plane->retourdatum."</td>". 
+                            "<td>".$plane->bestemming."</td>". 
+                            "<td>".$plane->status."</td>".
+                            "</tr>";
+                        }
+                    }
+                } else if(isset($_GET['id'])) {
                     $planeId = $_GET['id'];
                     $queryVliegtuig = "SELECT * FROM vliegtuigen WHERE vliegtuignummer=$planeId";
                     $stm = $conn->prepare($queryVliegtuig);
@@ -78,7 +78,7 @@
                                 "<td>".$rows->retourdatum."</td>". 
                                 "<td>".$rows->bestemming."</td>". 
                                 "<td>".$rows->status."</td>".
-                                "<td>"."<a href='home.php?id=$planeId&pid=$rows->vluchtnummer'>Wijzigen</a>"."</td>";
+                                "<td>"."<a href='home.php?id=$planeId&pid=$rows->vluchtnummer'>Wijzigen</a>"."</td>".
                                 "</tr>";
                             }
                        
@@ -96,7 +96,7 @@
                             "<td>".$rows->retourdatum."</td>". 
                             "<td>".$rows->bestemming."</td>". 
                             "<td>".$rows->status."</td>". 
-                            "<td>"."<a href='deleted.php?planningId=".$rows->vluchtnummer."'>Verwijderen</a>"."</td>";  
+                            "<td>"."<a href='deleted.php?planningId=".$rows->vluchtnummer."'>Verwijderen</a>"."</td>".
                             "</tr>";
                         }
                     }
